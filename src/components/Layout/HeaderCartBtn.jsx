@@ -3,8 +3,12 @@ import classes from "./HeaderCartBtn.module.css";
 import CartIcon from "../Cart/CartIcon";
 
 const HeaderCartBtn = (props) => {
+  const cartBtnClickHandler = () => {
+    props.onShowCart();
+  };
+
   return (
-    <button className={classes.button}>
+    <button className={classes.button} onClick={cartBtnClickHandler}>
       <span className={classes.icon}>
         <CartIcon />
       </span>

@@ -11,15 +11,21 @@ const Cart = (props) => {
     </ul>
   );
 
+  const closeCartModel = () => {
+    props.onHideCart();
+  };
+
   return (
-    <Model>
+    <Model onHideCart={props.onHideCart}>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>23.43</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]}>Close</button>
+        <button onClick={closeCartModel} className={classes["button--alt"]}>
+          Close
+        </button>
         <button className={classes.button}>Order</button>
       </div>
     </Model>

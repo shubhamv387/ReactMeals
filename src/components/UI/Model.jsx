@@ -2,8 +2,12 @@ import React from "react";
 import classes from "./Model.module.css";
 import ReactDOM from "react-dom";
 
-const Backdrop = () => {
-  return <div className={classes.backdrop}></div>;
+const Backdrop = (props) => {
+  const closeModelHandler = () => {
+    props.onHideCart();
+  };
+
+  return <div className={classes.backdrop} onClick={closeModelHandler}></div>;
 };
 
 const ModelOverlay = (props) => {
@@ -17,7 +21,10 @@ const ModelOverlay = (props) => {
 const Model = (props) => {
   return (
     <>
-      {ReactDOM.createPortal(<Backdrop />, document.getElementById("overlays"))}
+      {ReactDOM.createPortal(
+        <Backdrop onHideCart={props.onHideCart} />,
+        document.getElementById("overlays")
+      )}
       {ReactDOM.createPortal(
         <ModelOverlay>{props.children}</ModelOverlay>,
         document.getElementById("overlays")
