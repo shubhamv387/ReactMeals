@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Cart.module.css";
 import Model from "../UI/Model";
+import CartContext from "../../context/cart-context";
 
 const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
+
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
-        <li key={item.id}>{item.name}</li>
+      {cartCtx.items.map((item) => (
+        <li key={item.id}>
+          {item.name} {item.price}
+        </li>
       ))}
     </ul>
   );
@@ -20,7 +25,7 @@ const Cart = (props) => {
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>23.43</span>
+        <span>{cartCtx.totalAmount}</span>
       </div>
       <div className={classes.actions}>
         <button onClick={closeCartModel} className={classes["button--alt"]}>
