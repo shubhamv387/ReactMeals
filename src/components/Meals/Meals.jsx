@@ -1,6 +1,6 @@
 import React from "react";
 import MealsSummary from "./MealsSummary";
-import AvailableMeaks from "./AvailableMeaks";
+import AvailableMeaks from "./AvailableMeals";
 
 const Meals = () => {
   return (
