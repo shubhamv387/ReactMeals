@@ -37,6 +37,12 @@ const Cart = (props) => {
     props.onHideCart();
   };
 
+  const orderBtnHandler = () => {
+    cartCtx.order();
+    alert("Your order has been placed. Enjoy!");
+    props.onHideCart();
+  };
+
   return (
     <Model onHideCart={props.onHideCart}>
       {cartItems}
@@ -48,7 +54,11 @@ const Cart = (props) => {
         <button onClick={closeCartModel} className={classes["button--alt"]}>
           Close
         </button>
-        {hasItems && <button className={classes.button}>Order</button>}
+        {hasItems && (
+          <button onClick={orderBtnHandler} className={classes.button}>
+            Order
+          </button>
+        )}
       </div>
     </Model>
   );
