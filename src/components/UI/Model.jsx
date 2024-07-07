@@ -1,6 +1,5 @@
-import React from "react";
-import classes from "./Model.module.css";
-import ReactDOM from "react-dom";
+import classes from './Model.module.css';
+import ReactDOM from 'react-dom';
 
 const Backdrop = (props) => {
   const closeModelHandler = () => {
@@ -23,11 +22,11 @@ const Model = (props) => {
     <>
       {ReactDOM.createPortal(
         <Backdrop onHideCart={props.onHideCart} />,
-        document.getElementById("overlays")
+        document.getElementById('overlays')
       )}
       {ReactDOM.createPortal(
         <ModelOverlay>{props.children}</ModelOverlay>,
-        document.getElementById("overlays")
+        document.getElementById('overlays')
       )}
     </>
   );

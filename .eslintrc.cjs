@@ -16,5 +16,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/display-name': 'off', // Disable the react/display-name rule
+    'react/prop-types': 'off', // Disable the react/prop-types rule
   },
-}
+};

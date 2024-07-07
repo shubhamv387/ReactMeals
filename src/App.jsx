@@ -1,11 +1,11 @@
-import { useState } from "react";
-import "./App.css";
-import Cart from "./components/Cart/Cart";
-import Header from "./components/Layout/Header";
-import Meals from "./components/Meals/Meals";
-import CartProvider from "./context/CartProvider";
+import { useState } from 'react';
+import './App.css';
+import Cart from './components/Cart/Cart';
+import Header from './components/Layout/Header';
+import CartProvider from './context/CartProvider';
+import Meals from './components/Meals/Meals';
 
-function App() {
+const App = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -25,6 +25,6 @@ function App() {
       </main>
     </CartProvider>
   );
-}
+};
 
 export default App;

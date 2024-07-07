@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import classes from "./Cart.module.css";
-import Model from "../UI/Model";
-import CartContext from "../../context/cart-context";
-import CartItem from "./CartItem";
+import { useContext } from 'react';
+import classes from './Cart.module.css';
+import Model from '../UI/Model';
+import CartContext from '../../context/cart-context';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -19,7 +19,7 @@ const Cart = (props) => {
   };
 
   const cartItems = (
-    <ul className={classes["cart-items"]}>
+    <ul className={classes['cart-items']}>
       {cartCtx.items.map((item) => (
         <CartItem
           key={item.id}
@@ -39,7 +39,7 @@ const Cart = (props) => {
 
   const orderBtnHandler = () => {
     cartCtx.order();
-    alert("Your order has been placed. Enjoy!");
+    alert('Your order has been placed. Enjoy!');
     props.onHideCart();
   };
 
@@ -51,7 +51,7 @@ const Cart = (props) => {
         <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>
-        <button onClick={closeCartModel} className={classes["button--alt"]}>
+        <button onClick={closeCartModel} className={classes['button--alt']}>
           Close
         </button>
         {hasItems && (
